@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+   <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>ATM machine</title>
+		<link href="style.css" rel="stylesheet" type="text/css"/>
+	</head>
+      	
+	<body>
+		
+	 <table>
+	 <tr>
+	 	<td><BUTTON  onclick="checkbalance()"> Check Balance </BUTTON> </td>
+
+     	<td><BUTTON  onclick="withdraw()"> withdraw </BUTTON> </td>
+	 </tr>
+	 <tr>
+        <td><BUTTON  onclick="deposit()"> deposit </BUTTON> </td>
+     	<td><BUTTON  onclick="exit()"> exit </BUTTON> </td>
+     </tr>
+	 <table>
+	 	   <script>
+   		var id;
+		var withdraw, deposit;
+		var withdrawtotal, deposittotal;
+        
+		var info = [5];
+		info[2] = [1689.89];
+     
+		
+		id = window.prompt("please enter your ID");
+
+
+      function checkbalance (){
+	  	document.writeln("<h1> The balance is: $" + info[id]+"</h1>");
+	  }
+     
+	 function withdraw(){
+		withdraw = window.prompt("enter the amount to withdraw: ");
+		withdrawtotal = info[id] - withdraw;
+		document.writeln("<h1> your account balance now is $"+withdrawtotal.toFixed(2)+"</h1>");
+      }
+    
+	function deposit(){
+		deposit = window.prompt("enter the amount to deposit: ");
+		deposittotal = info[id] - deposit;
+		document.writeln("<h1> your account balance now is $"+deposittotal.toFixed(2)+"</h1>");
+     }
+   
+   function exit () {
+   		document.writeln("<h1> thanks for using the ATM </h1>")
+   }
+   </script>
+	
+   </body>
+</html>
